@@ -48,7 +48,7 @@ class AppDict(dict):
             pass
 
         # Debugging
-        print("self", self)
+        # print("self", self)
 
         # Set current app to None to start, to avoid errors
         self.current_app = None
@@ -65,7 +65,7 @@ class AppDict(dict):
                 sleep(sleep_for)
 
                 # Debugging
-                print(self) 
+                # print(self) 
 
         except KeyboardInterrupt:
 
@@ -114,7 +114,7 @@ class AppDict(dict):
                     return
 
                 # Debugging
-                print(self[app][des])
+                # print(self[app][des])
 
             # Else, this is the first app, or the timer was not started for the previous app
             # In either case, nothing needs to be done
@@ -152,11 +152,17 @@ class ActiveApp():
         return self.active_win == value
 
     def start(self):
-        print("Starting timer for", self.active_win)
+
+        # Debugging
+        # print("Starting timer for", self.active_win)
+        
         self.start_time = pendulum.now()
 
     def end(self):
-        print("Ending timer for", self.active_win)
+
+        # Debugging
+        # print("Ending timer for", self.active_win)
+        
         if not self.start_time:
             raise Exception("Must give start time first!")
         self.end_time = pendulum.now()
