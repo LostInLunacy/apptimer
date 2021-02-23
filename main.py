@@ -152,16 +152,15 @@ class ActiveApp():
         return self.active_win == value
 
     def start(self):
-
-        # Debugging
-        # print("Starting timer for", self.active_win)
-        
         self.start_time = pendulum.now()
+        print(f"\n{self.start_time.to_time_string()} | Starting timer for {self.app} ({self.description})")
+        
+        
 
     def end(self):
 
         # Debugging
-        # print("Ending timer for", self.active_win)
+        # print(f"Ending timer for {self.app} ({self.description})")
         
         if not self.start_time:
             raise Exception("Must give start time first!")
